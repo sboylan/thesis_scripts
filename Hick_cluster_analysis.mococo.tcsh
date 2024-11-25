@@ -20,17 +20,17 @@
 
 
 set Home = $PWD
-set githubFolder = "/home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis"
+set githubFolder = "XXX/hick_entropy_analysis"
 set results_dir = "$githubFolder/results/task_versus_rest_clusterization_analysis"
-set dataFolder  = "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data"
+set dataFolder  = "XXX/quantitativ_fMRI/data"
 set input_directory = "Analysis/CMRO2calc_classic"
 set CMRO2_input_directory = "Analysis/CMRO2_regression"
-set underlayMNI = "/home/mococo/abin/MNI152_2009_template_SSW.nii.gz"
+set underlayMNI = "XXX/abin/MNI152_2009_template_SSW.nii.gz"
 set ImageFolder = "$results_dir/images"
 set ModelresultFolderName = Model_results
 set ModelresultFolder = "$results_dir/$ModelresultFolderName"
 set atlas = "Schaefer_Yeo_17n_400 -atlas MNI_Glasser_HCP_v1.0 -atlas Brainnetome_1.0"
-setenv AFNI_SUPP_ATLAS "/home/mococo/abin/AFNI_atlas_spaces.niml"
+setenv AFNI_SUPP_ATLAS "XXX/abin/AFNI_atlas_spaces.niml"
 
 set NN = 2
 set GMmask = "$githubFolder/results/meanGMmask+tlrc"
@@ -57,32 +57,7 @@ foreach reg ( $regressors )
       3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestM_$reg               \
                -resid ./$ModelresultFolderName/errtsM_$reg -ACF -Clustsim -prefix_clustsim ccM_$reg -tempdir ./$ModelresultFolderName/ClustSimdata \
                -mask $GMmask  -setA M                                            \
-               01 "$dataFolder/AlPu/${input_directory}/$file_name" \
-               02 "$dataFolder/AnCD/${input_directory}/$file_name" \
-               03 "$dataFolder/ArDC/${input_directory}/$file_name" \
-               04 "$dataFolder/BeMa/${input_directory}/$file_name" \
-               06 "$dataFolder/ClBo/${input_directory}/$file_name" \
-               07 "$dataFolder/CoVB/${input_directory}/$file_name" \
-               08 "$dataFolder/DoBi/${input_directory}/$file_name" \
-               09 "$dataFolder/ElBe/${input_directory}/$file_name" \
-               10 "$dataFolder/ElCo/${input_directory}/$file_name" \
-               11 "$dataFolder/HiCh/${input_directory}/$file_name" \
-               12 "$dataFolder/JoDM/${input_directory}/$file_name" \
-               13 "$dataFolder/JoDP/${input_directory}/$file_name" \
-               14 "$dataFolder/LeGa/${input_directory}/$file_name" \
-               15 "$dataFolder/MaCh/${input_directory}/$file_name" \
-               16 "$dataFolder/MaKi/${input_directory}/$file_name" \
-               17 "$dataFolder/MaKM/${input_directory}/$file_name" \
-               19 "$dataFolder/NaCa/${input_directory}/$file_name" \
-               20 "$dataFolder/NiDe/${input_directory}/$file_name" \
-               21 "$dataFolder/RaEM/${input_directory}/$file_name" \
-               22 "$dataFolder/RaZi/${input_directory}/$file_name" \
-               23 "$dataFolder/BrMa/${input_directory}/$file_name" \
-               24 "$dataFolder/ElAc/${input_directory}/$file_name" \
-               25 "$dataFolder/CeHa/${input_directory}/$file_name" \
-               26 "$dataFolder/MiAn/${input_directory}/$file_name" \
-               18 "$dataFolder/SaGa/${input_directory}/$file_name" \
-               5 "$dataFolder/SoSe/${input_directory}/$file_name"
+               01 "$dataFolder/XXX/${input_directory}/$file_name" 
    endif
 end
 
@@ -92,30 +67,7 @@ if (! -f "./$ModelresultFolderName/TtestTvsR_PW2+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestTvsR_PW2                  \
             -resid ./$ModelresultFolderName/errtsTvsR_PW -ACF -Clustsim -prefix_clustsim ccTvsR_PW -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_PW                                            \
-            01 "$dataFolder/AlPu/${input_directory}/stats.PW2_TvsR.AlPu+tlrc.BRIK[6]" \
-            02 "$dataFolder/AnCD/${input_directory}/stats.PW2_TvsR.AnCD+tlrc.BRIK[6]" \
-            03 "$dataFolder/ArDC/${input_directory}/stats.PW2_TvsR.ArDC+tlrc.BRIK[6]" \
-            04 "$dataFolder/BeMa/${input_directory}/stats.PW2_TvsR.BeMa+tlrc.BRIK[6]" \
-            06 "$dataFolder/ClBo/${input_directory}/stats.PW2_TvsR.ClBo+tlrc.BRIK[6]" \
-            07 "$dataFolder/CoVB/${input_directory}/stats.PW2_TvsR.CoVB+tlrc.BRIK[6]" \
-            08 "$dataFolder/DoBi/${input_directory}/stats.PW2_TvsR.DoBi+tlrc.BRIK[6]" \
-            09 "$dataFolder/ElBe/${input_directory}/stats.PW2_TvsR.ElBe+tlrc.BRIK[6]" \
-            10 "$dataFolder/ElCo/${input_directory}/stats.PW2_TvsR.ElCo+tlrc.BRIK[6]" \
-            11 "$dataFolder/HiCh/${input_directory}/stats.PW2_TvsR.HiCh+tlrc.BRIK[6]" \
-            12 "$dataFolder/JoDM/${input_directory}/stats.PW2_TvsR.JoDM+tlrc.BRIK[6]" \
-            13 "$dataFolder/JoDP/${input_directory}/stats.PW2_TvsR.JoDP+tlrc.BRIK[6]" \
-            14 "$dataFolder/LeGa/${input_directory}/stats.PW2_TvsR.LeGa+tlrc.BRIK[6]" \
-            15 "$dataFolder/MaCh/${input_directory}/stats.PW2_TvsR.MaCh+tlrc.BRIK[6]" \
-            16 "$dataFolder/MaKi/${input_directory}/stats.PW2_TvsR.MaKi+tlrc.BRIK[6]" \
-            17 "$dataFolder/MaKM/${input_directory}/stats.PW2_TvsR.MaKM+tlrc.BRIK[6]" \
-            19 "$dataFolder/NaCa/${input_directory}/stats.PW2_TvsR.NaCa+tlrc.BRIK[6]" \
-            20 "$dataFolder/NiDe/${input_directory}/stats.PW2_TvsR.NiDe+tlrc.BRIK[6]" \
-            21 "$dataFolder/RaEM/${input_directory}/stats.PW2_TvsR.RaEM+tlrc.BRIK[6]" \
-            22 "$dataFolder/RaZi/${input_directory}/stats.PW2_TvsR.RaZi+tlrc.BRIK[6]" \
-            23 "$dataFolder/BrMa/${input_directory}/stats.PW2_TvsR.BrMa+tlrc.BRIK[6]" \
-            24 "$dataFolder/ElAc/${input_directory}/stats.PW2_TvsR.ElAc+tlrc.BRIK[6]" \
-            18 "$dataFolder/SaGa/${input_directory}/stats.PW2_TvsR.SaGa+tlrc.BRIK[6]" \
-            5 "$dataFolder/SoSe/${input_directory}/stats.PW2_TvsR.SoSe+tlrc.BRIK[6]"
+            01 "$dataFolder/XXX/${input_directory}/stats.PW2_TvsR.XXX+tlrc.BRIK[6]" 
 endif
 
 
@@ -125,30 +77,7 @@ if (! -f "./$ModelresultFolderName/TtestTvsR_BOLD2+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestTvsR_BOLD2                  \
             -resid ./$ModelresultFolderName/errts_TvsR_BOLD -ACF -Clustsim -prefix_clustsim ccTvsR_BOLD -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_BOLD                                            \
-            01 "$dataFolder/AlPu/${input_directory}/stats.MEC2_TvsR.AlPu_REML+tlrc.BRIK[6]" \
-            02 "$dataFolder/AnCD/${input_directory}/stats.MEC2_TvsR.AnCD_REML+tlrc.BRIK[6]" \
-            03 "$dataFolder/ArDC/${input_directory}/stats.MEC2_TvsR.ArDC_REML+tlrc.BRIK[6]" \
-            04 "$dataFolder/BeMa/${input_directory}/stats.MEC2_TvsR.BeMa_REML+tlrc.BRIK[6]" \
-            06 "$dataFolder/ClBo/${input_directory}/stats.MEC2_TvsR.ClBo_REML+tlrc.BRIK[6]" \
-            07 "$dataFolder/CoVB/${input_directory}/stats.MEC2_TvsR.CoVB_REML+tlrc.BRIK[6]" \
-            08 "$dataFolder/DoBi/${input_directory}/stats.MEC2_TvsR.DoBi_REML+tlrc.BRIK[6]" \
-            09 "$dataFolder/ElBe/${input_directory}/stats.MEC2_TvsR.ElBe_REML+tlrc.BRIK[6]" \
-            10 "$dataFolder/ElCo/${input_directory}/stats.MEC2_TvsR.ElCo_REML+tlrc.BRIK[6]" \
-            11 "$dataFolder/HiCh/${input_directory}/stats.MEC2_TvsR.HiCh_REML+tlrc.BRIK[6]" \
-            12 "$dataFolder/JoDM/${input_directory}/stats.MEC2_TvsR.JoDM_REML+tlrc.BRIK[6]" \
-            13 "$dataFolder/JoDP/${input_directory}/stats.MEC2_TvsR.JoDP_REML+tlrc.BRIK[6]" \
-            14 "$dataFolder/LeGa/${input_directory}/stats.MEC2_TvsR.LeGa_REML+tlrc.BRIK[6]" \
-            15 "$dataFolder/MaCh/${input_directory}/stats.MEC2_TvsR.MaCh_REML+tlrc.BRIK[6]" \
-            16 "$dataFolder/MaKi/${input_directory}/stats.MEC2_TvsR.MaKi_REML+tlrc.BRIK[6]" \
-            17 "$dataFolder/MaKM/${input_directory}/stats.MEC2_TvsR.MaKM_REML+tlrc.BRIK[6]" \
-            19 "$dataFolder/NaCa/${input_directory}/stats.MEC2_TvsR.NaCa_REML+tlrc.BRIK[6]" \
-            20 "$dataFolder/NiDe/${input_directory}/stats.MEC2_TvsR.NiDe_REML+tlrc.BRIK[6]" \
-            21 "$dataFolder/RaEM/${input_directory}/stats.MEC2_TvsR.RaEM_REML+tlrc.BRIK[6]" \
-            22 "$dataFolder/RaZi/${input_directory}/stats.MEC2_TvsR.RaZi_REML+tlrc.BRIK[6]" \
-            23 "$dataFolder/BrMa/${input_directory}/stats.MEC2_TvsR.BrMa_REML+tlrc.BRIK[6]" \
-            24 "$dataFolder/ElAc/${input_directory}/stats.MEC2_TvsR.ElAc_REML+tlrc.BRIK[6]" \
-            18 "$dataFolder/SaGa/${input_directory}/stats.MEC2_TvsR.SaGa_REML+tlrc.BRIK[6]" \
-            5 "$dataFolder/SoSe/${input_directory}/stats.MEC2_TvsR.SoSe_REML+tlrc.BRIK[6]"
+            01 "$dataFolder/XXX/${input_directory}/stats.MEC2_TvsR.XXX_REML+tlrc.BRIK[6]" 
 endif
 
 if (! -f "./$ModelresultFolderName/TtestTvsR_CMRO2+tlrc.HEAD" ) then
@@ -158,30 +87,7 @@ if (! -f "./$ModelresultFolderName/TtestTvsR_CMRO2+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestTvsR_CMRO2                  \
             -resid ./$ModelresultFolderName/errtsTvsR_CMRO2 -ACF -Clustsim -prefix_clustsim ccTvsR_CMRO2 -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_TvsR+tlrc.HEAD[2]" 
 endif
 
 ## ---------------------   CMRO2 ttest from calculated CMRO2 from beta coefficients of BOLD and ASL  ------------------
@@ -209,30 +115,7 @@ echo $list
          -resid ./$ModelresultFolderName/errts_CMRO2_calculated_HRF -ACF -Clustsim \
          -prefix_clustsim ccTvsR_CMRO2_calculated_HRF -tempdir ./$ModelresultFolderName/ClustSimdata \
          -mask $GMmask  -setA "taskVsRest_CMRO2_calculated_HRF" \
-         01 ./Model_results/demeaned_AlPu_CMRO2_TvsR_hrf+tlrc.BRIK \
-         02 ./Model_results/demeaned_AnCD_CMRO2_TvsR_hrf+tlrc.BRIK \
-         03 ./Model_results/demeaned_ArDC_CMRO2_TvsR_hrf+tlrc.BRIK \
-         04 ./Model_results/demeaned_BeMa_CMRO2_TvsR_hrf+tlrc.BRIK \
-         05 ./Model_results/demeaned_BrMa_CMRO2_TvsR_hrf+tlrc.BRIK \
-         06 ./Model_results/demeaned_ClBo_CMRO2_TvsR_hrf+tlrc.BRIK \
-         07 ./Model_results/demeaned_CoVB_CMRO2_TvsR_hrf+tlrc.BRIK \
-         08 ./Model_results/demeaned_DoBi_CMRO2_TvsR_hrf+tlrc.BRIK \
-         09 ./Model_results/demeaned_ElAc_CMRO2_TvsR_hrf+tlrc.BRIK \
-         10 ./Model_results/demeaned_ElBe_CMRO2_TvsR_hrf+tlrc.BRIK \
-         11 ./Model_results/demeaned_ElCo_CMRO2_TvsR_hrf+tlrc.BRIK \
-         12 ./Model_results/demeaned_HiCh_CMRO2_TvsR_hrf+tlrc.BRIK \
-         13 ./Model_results/demeaned_JoDM_CMRO2_TvsR_hrf+tlrc.BRIK \
-         14 ./Model_results/demeaned_JoDP_CMRO2_TvsR_hrf+tlrc.BRIK \
-         15 ./Model_results/demeaned_LeGa_CMRO2_TvsR_hrf+tlrc.BRIK \
-         16 ./Model_results/demeaned_MaCh_CMRO2_TvsR_hrf+tlrc.BRIK \
-         17 ./Model_results/demeaned_MaKi_CMRO2_TvsR_hrf+tlrc.BRIK \
-         18 ./Model_results/demeaned_MaKM_CMRO2_TvsR_hrf+tlrc.BRIK \
-         19 ./Model_results/demeaned_NaCa_CMRO2_TvsR_hrf+tlrc.BRIK \
-         20 ./Model_results/demeaned_NiDe_CMRO2_TvsR_hrf+tlrc.BRIK \
-         21 ./Model_results/demeaned_RaEM_CMRO2_TvsR_hrf+tlrc.BRIK \
-         22 ./Model_results/demeaned_RaZi_CMRO2_TvsR_hrf+tlrc.BRIK \
-         23 ./Model_results/demeaned_SaGa_CMRO2_TvsR_hrf+tlrc.BRIK \
-         24 ./Model_results/demeaned_SoSe_CMRO2_TvsR_hrf+tlrc.BRIK
+         01 ./Model_results/demeaned_XXX_CMRO2_TvsR_hrf+tlrc.BRIK 
 
 
    ## running 3dttest on TaskVsRest for CMRO2 from BOLD and ASl beta coefs HRF   
@@ -257,30 +140,7 @@ echo $list
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestTvsR_CMRO2_calculated_RRF \
             -resid ./$ModelresultFolderName/errts_CMRO2_calculated_RRF -ACF -Clustsim -prefix_clustsim ccTvsR_CMRO2_calculated_RRF -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA "taskVsRest_CMRO2_calculated_RRF" \
-            01 ./Model_results/demeaned_AlPu_CMRO2_TvsR_rrf+tlrc.BRIK \
-            02 ./Model_results/demeaned_AnCD_CMRO2_TvsR_rrf+tlrc.BRIK \
-            03 ./Model_results/demeaned_ArDC_CMRO2_TvsR_rrf+tlrc.BRIK \
-            04 ./Model_results/demeaned_BeMa_CMRO2_TvsR_rrf+tlrc.BRIK \
-            05 ./Model_results/demeaned_BrMa_CMRO2_TvsR_rrf+tlrc.BRIK \
-            06 ./Model_results/demeaned_ClBo_CMRO2_TvsR_rrf+tlrc.BRIK \
-            07 ./Model_results/demeaned_CoVB_CMRO2_TvsR_rrf+tlrc.BRIK \
-            08 ./Model_results/demeaned_DoBi_CMRO2_TvsR_rrf+tlrc.BRIK \
-            09 ./Model_results/demeaned_ElAc_CMRO2_TvsR_rrf+tlrc.BRIK \
-            10 ./Model_results/demeaned_ElBe_CMRO2_TvsR_rrf+tlrc.BRIK \
-            11 ./Model_results/demeaned_ElCo_CMRO2_TvsR_rrf+tlrc.BRIK \
-            12 ./Model_results/demeaned_HiCh_CMRO2_TvsR_rrf+tlrc.BRIK \
-            13 ./Model_results/demeaned_JoDM_CMRO2_TvsR_rrf+tlrc.BRIK \
-            14 ./Model_results/demeaned_JoDP_CMRO2_TvsR_rrf+tlrc.BRIK \
-            15 ./Model_results/demeaned_LeGa_CMRO2_TvsR_rrf+tlrc.BRIK \
-            16 ./Model_results/demeaned_MaCh_CMRO2_TvsR_rrf+tlrc.BRIK \
-            17 ./Model_results/demeaned_MaKi_CMRO2_TvsR_rrf+tlrc.BRIK \
-            18 ./Model_results/demeaned_MaKM_CMRO2_TvsR_rrf+tlrc.BRIK \
-            19 ./Model_results/demeaned_NaCa_CMRO2_TvsR_rrf+tlrc.BRIK \
-            20 ./Model_results/demeaned_NiDe_CMRO2_TvsR_rrf+tlrc.BRIK \
-            21 ./Model_results/demeaned_RaEM_CMRO2_TvsR_rrf+tlrc.BRIK \
-            22 ./Model_results/demeaned_RaZi_CMRO2_TvsR_rrf+tlrc.BRIK \
-            23 ./Model_results/demeaned_SaGa_CMRO2_TvsR_rrf+tlrc.BRIK \
-            24 ./Model_results/demeaned_SoSe_CMRO2_TvsR_rrf+tlrc.BRIK
+            01 ./Model_results/demeaned_XXX_CMRO2_TvsR_rrf+tlrc.BRIK 
 
    ### ========== Condition 1 (H0) CMRO2  ================= ###
    ## running 3dttest on H0 for CMRO2
@@ -290,30 +150,7 @@ if (! -f "./$ModelresultFolderName/TtestH0_CMRO2+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestH0_CMRO2                  \
             -resid ./$ModelresultFolderName/errtsH0_CMRO2 -ACF -Clustsim -prefix_clustsim ccH0_CMRO2 -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[2]" 
 endif
 
 if (! -f "./$ModelresultFolderName/TtestH1_CMRO2+tlrc.HEAD" ) then
@@ -323,30 +160,7 @@ if (! -f "./$ModelresultFolderName/TtestH1_CMRO2+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestH1_CMRO2                  \
             -resid ./$ModelresultFolderName/errtsH1_CMRO2 -ACF -Clustsim -prefix_clustsim ccH1_CMRO2 -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[6]" 
 endif
 
 if (! -f "./$ModelresultFolderName/TtestH2_CMRO2+tlrc.HEAD" ) then
@@ -356,30 +170,7 @@ if (! -f "./$ModelresultFolderName/TtestH2_CMRO2+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestH2_CMRO2                  \
             -resid ./$ModelresultFolderName/errtsH2_CMRO2 -ACF -Clustsim -prefix_clustsim ccH2_CMRO2 -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD[10]"
 endif
 
 if (! -f "./$ModelresultFolderName/TtestTvsR_CMRO2_RRF+tlrc.HEAD" ) then
@@ -389,30 +180,7 @@ if (! -f "./$ModelresultFolderName/TtestTvsR_CMRO2_RRF+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestTvsR_CMRO2_RRF                  \
             -resid ./$ModelresultFolderName/errtsTvsR_CMRO2_RRF -ACF -Clustsim -prefix_clustsim ccTvsR_CMRO2_RRF -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2_RRF                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_TvsR+tlrc.HEAD[2]" 
 endif
 
    ### ========== Condition 1 (H0) CMRO2  ================= ###
@@ -423,30 +191,7 @@ if (! -f "./$ModelresultFolderName/TtestH0_CMRO2_RRF+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestH0_CMRO2_RRF                  \
             -resid ./$ModelresultFolderName/errtsH0_CMRO2_RRF -ACF -Clustsim -prefix_clustsim ccH0_CMRO2_RRF -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2_RRF                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[2]" 
 endif
 
 if (! -f "./$ModelresultFolderName/TtestH1_CMRO2_RRF+tlrc.HEAD" ) then
@@ -456,30 +201,7 @@ if (! -f "./$ModelresultFolderName/TtestH1_CMRO2_RRF+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestH1_CMRO2_RRF                  \
             -resid ./$ModelresultFolderName/errtsH1_CMRO2_RRF -ACF -Clustsim -prefix_clustsim ccH1_CMRO2_RRF -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2_RRF                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[6]" 
 endif
 
 if (! -f "./$ModelresultFolderName/TtestH2_CMRO2_RRF+tlrc.HEAD" ) then
@@ -489,30 +211,7 @@ if (! -f "./$ModelresultFolderName/TtestH2_CMRO2_RRF+tlrc.HEAD" ) then
    3dttest++ -overwrite -prefix ./$ModelresultFolderName/TtestH2_CMRO2_RRF                  \
             -resid ./$ModelresultFolderName/errtsH2_CMRO2_RRF -ACF -Clustsim -prefix_clustsim ccH2_CMRO2_RRF -tempdir ./$ModelresultFolderName/ClustSimdata \
             -mask $GMmask  -setA taskVsRest_CMRO2_RRF                                            \
-            01 "$dataFolder/AlPu/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            02 "$dataFolder/AnCD/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            03 "$dataFolder/ArDC/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            04 "$dataFolder/BeMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            06 "$dataFolder/ClBo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            07 "$dataFolder/CoVB/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            08 "$dataFolder/DoBi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            09 "$dataFolder/ElBe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            10 "$dataFolder/ElCo/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            11 "$dataFolder/HiCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            12 "$dataFolder/JoDM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            13 "$dataFolder/JoDP/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            14 "$dataFolder/LeGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            15 "$dataFolder/MaCh/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            16 "$dataFolder/MaKi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            17 "$dataFolder/MaKM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            19 "$dataFolder/NaCa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            20 "$dataFolder/NiDe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            21 "$dataFolder/RaEM/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            22 "$dataFolder/RaZi/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            23 "$dataFolder/BrMa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            24 "$dataFolder/ElAc/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            5 "$dataFolder/SaGa/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" \
-            18 "$dataFolder/SoSe/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]"
+            01 "$dataFolder/XXX/${CMRO2_input_directory}/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD[10]" 
 endif
 
 ### =======================     BOLD & ASL     =========================================
