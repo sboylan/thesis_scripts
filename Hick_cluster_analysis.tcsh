@@ -1,7 +1,7 @@
 #!/bin/tcsh -xef
 
 # to execute via bash: 
-#   tcsh -xef Hick_cluster_analysis.mococo.tcsh 2>&1 | tee output.Hick_cluster_analysis.mococo_26_09
+#   tcsh -xef XXX.tcsh 2>&1 | tee output.XXX
 ### This program is used to analyse activation patterns on all subjects through a t-test. As some outliers has been identified, there are usually lesser
 ### lines in the t-tests than there are subjects. The full test is usually commented at the end.
 ### One tests BOLD, a second tests ASL and the results are both used to compute an intersect mask that corresponds to voxels that are both 
