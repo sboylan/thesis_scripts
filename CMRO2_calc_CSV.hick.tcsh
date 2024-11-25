@@ -9,7 +9,7 @@
 ### for BOLD, ASL and CMRO2. CMRO2 HRF and RRF will be calculated. Concerning entropy conditions, they were calculated via davis equation using
 ### the three beta coefficient of each BOLD and ASL. ANother methode would be to use the coefficients from the regression of CMRO2(t) that has
 ### calculated before. THe masks used here were computed in Hick_cluster_analysis.mococo.tcsh
-### This script necessicates a mask within which voxels will be studied. 
+### This script necessicates a mask within wXXX voxels will be studied. 
 ### This mask is calculated in a previous script Hick_cluster_analysis.mococo.tcsh
 ### We do not create an output folder, the result folder has to be the same as the one with the intersectional atlas.
 ### This previous step obviously need pre-processing, fisrst and second level analysis to have been done on each subject.
@@ -35,12 +35,12 @@
 
 
 set Home = $PWD
-set githubAdress = "/home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/results"
+set githubAdress = "XXX/hick_entropy_analysis/results"
 set results_dir = 'task_versus_rest_clusterization_analysis'
-set dataFolder  = '/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data'
+set dataFolder  = 'XXX/quantitativ_fMRI/data'
 set input_directory = "Analysis/CMRO2calc_classic"
 set input_dir_CMRO2_reg = "Analysis/CMRO2_regression"
-set underlayMNI = "/home/mococo/abin/MNI152_2009_template_SSW.nii.gz"
+set underlayMNI = "XXX/abin/MNI152_2009_template_SSW.nii.gz"
 set ModelresultFolder = "Model_results"
 set inputRegressDir = "Analysis/regression_factorization"
 set minNbrTR = 226
@@ -71,67 +71,35 @@ if (1) then
 
       if (! -f "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_hrf+tlrc.HEAD" ) then
          3dMean -overwrite -prefix "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_hrf" \
-                "$dataFolder/AlPu/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/AnCD/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ArDC/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/BeMa/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ClBo/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/CoVB/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/DoBi/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ElBe/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ElCo/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/HiCh/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/JoDM/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/JoDP/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/LeGa/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/MaCh/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/MaKi/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/MaKM/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/NaCa/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/NiDe/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/RaEM/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/RaZi/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/SaGa/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/SoSe/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/BrMa/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ElAc/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]"
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/rm.CMRO2_time_serie_Hick_TvsR_hrf+tlrc[0..$minNbrTR]" 
       endif
 
 
       echo `3dmaskave -q -mask $atlasMask "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_hrf+tlrc"`   >  "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_hrf.hick.1D"
-      1dplot -ps -one -xlabel 'CMRO2 Hick' -ylabel 'CMRO2 in areas activated through BOLD and ASL' "$dataFolder/AlPu/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_hrf.hick.1D" | gs -r100 -sOutputFile="images/mean_CMRO2_t_interMask_TvsR_hick_HRF.bmp" -sDEVICE=bmp256
+      1dplot -ps -one -xlabel 'CMRO2 Hick' -ylabel 'CMRO2 in areas activated through BOLD and ASL' "$dataFolder/XXX/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_hrf.hick.1D" | gs -r100 -sOutputFile="images/mean_CMRO2_t_interMask_TvsR_hick_HRF.bmp" -sDEVICE=bmp256
 
       ## =====  Plotting mean task versus rest CMRO2(t) for RRF regressor
       if (! -f "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_rrf+tlrc.HEAD" ) then
          3dMean -overwrite -prefix "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_rrf" \
-                "$dataFolder/AlPu/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/AnCD/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ArDC/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/BeMa/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ClBo/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/CoVB/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/DoBi/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ElBe/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ElCo/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/HiCh/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/JoDM/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/JoDP/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/LeGa/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/MaCh/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/MaKi/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/MaKM/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/NaCa/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/NiDe/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/RaEM/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/RaZi/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/SaGa/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/SoSe/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/BrMa/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
-                "$dataFolder/ElAc/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]"
+                "$dataFolder/XXX/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]" \
+                "$dataFolder/XXX/${input_directory}/CMRO2_time_serie_Hick_TvsR_rrf+tlrc[0..$minNbrTR]"
       endif
 
       echo `3dmaskave -q -mask $atlasMask "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_rrf+tlrc"`   >  "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_rrf.hick.1D"
-      1dplot -ps -one -xlabel 'scan number' -ylabel 'CMRO2 in areas activated through BOLD and ASL (RRF)' "$dataFolder/AlPu/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_rrf.hick.1D" | gs -r100 -sOutputFile="images/mean_CMRO2_t_interMask_TvsR_hick_RRF.bmp" -sDEVICE=bmp256
+      1dplot -ps -one -xlabel 'scan number' -ylabel 'CMRO2 in areas activated through BOLD and ASL (RRF)' "$dataFolder/XXX/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_CMRO2_t_TvsR_rrf.hick.1D" | gs -r100 -sOutputFile="images/mean_CMRO2_t_interMask_TvsR_hick_RRF.bmp" -sDEVICE=bmp256
 
    ## ============= ROI values (for specific analysis)  =============================
       # --------------------------------  Schaefer & Yeo  -------------------------------------
@@ -740,94 +708,31 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName1 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
 
       set outFileName2 = $ModelresultFolder/CMRO2_HRF_pos_intersection_voxels_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName2 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
       set outFileName4 = $ModelresultFolder/CMRO2_HRF_pos_intersection_voxels_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName4 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
       set hereDir = "$PWD"
       set csvFileName = "CMRO2_regression_HRF_intersect_mask.csv"
@@ -841,94 +746,31 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName1 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
 
       set outFileName2 = $ModelresultFolder/CMRO2_HRF_pos_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
       set outFileName4 = $ModelresultFolder/CMRO2_HRF_pos_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                   
       set hereDir = "$PWD"
@@ -944,95 +786,32 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
 
          set outFileName2 = $ModelresultFolder/CMRO2_HRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_HRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                      
          set hereDir = "$PWD"
@@ -1050,96 +829,33 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2posMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
                    
 
          set outFileName2 = $ModelresultFolder/CMRO2_calculated_HRF_pos_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2posMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_calculated_HRF_pos_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2posMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                      
          set hereDir = "$PWD"
@@ -1156,96 +872,33 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
                    
 
          set outFileName2 = $ModelresultFolder/CMRO2_calculated_HRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_calculated_HRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                      
          set hereDir = "$PWD"
@@ -1277,96 +930,33 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName1 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
       set outFileName2 = $ModelresultFolder/CMRO2_RRF_pos_intersection_voxels_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
       set outFileName4 = $ModelresultFolder/CMRO2_RRF_pos_intersection_voxels_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'
 
                   
       set hereDir = "$PWD"
@@ -1381,96 +971,33 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName1 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
       set outFileName2 = $ModelresultFolder/CMRO2_RRF_pos_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
       set outFileName4 = $ModelresultFolder/CMRO2_RRF_pos_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                   
       set hereDir = "$PWD"
@@ -1486,96 +1013,33 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
          set outFileName2 = $ModelresultFolder/CMRO2_RRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_RRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                      
          set hereDir = "$PWD"
@@ -1592,96 +1056,33 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName1 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
       set outFileName2 = $ModelresultFolder/CMRO2_calculated_RRF_pos_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
       set outFileName4 = $ModelresultFolder/CMRO2_calculated_RRF_pos_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                   
       set hereDir = "$PWD"
@@ -1698,96 +1099,33 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'
 
 
          set outFileName2 = $ModelresultFolder/CMRO2_calculated_RRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_calculated_RRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CeHa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MiAn/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                      
          set hereDir = "$PWD"
@@ -1801,34 +1139,13 @@ endif
       if (! -f "$ModelresultFolder/mean_subj_PW_t_Hick+tlrc.HEAD" ) then
              set fileName = "dataset.PW.r02+tlrc[0..$minNbrTR]"
              3dMean -overwrite -prefix "$ModelresultFolder/mean_subj_PW_t_Hick" \
-                    "$dataFolder/AlPu/${inputRegressDir}/$fileName" \
-                    "$dataFolder/AnCD/${inputRegressDir}/$fileName" \
-                    "$dataFolder/ArDC/${inputRegressDir}/$fileName" \
-                    "$dataFolder/BeMa/${inputRegressDir}/$fileName" \
-                    "$dataFolder/BrMa/${inputRegressDir}/$fileName" \
-                    "$dataFolder/HiCh/${inputRegressDir}/$fileName" \
-                    "$dataFolder/ClBo/${inputRegressDir}/$fileName" \
-                    "$dataFolder/CoVB/${inputRegressDir}/$fileName" \
-                    "$dataFolder/DoBi/${inputRegressDir}/$fileName" \
-                    "$dataFolder/ElAc/${inputRegressDir}/$fileName" \
-                    "$dataFolder/ElBe/${inputRegressDir}/$fileName" \
-                    "$dataFolder/ElCo/${inputRegressDir}/$fileName" \
-                    "$dataFolder/JoDM/${inputRegressDir}/$fileName" \
-                    "$dataFolder/JoDP/${inputRegressDir}/$fileName" \
-                    "$dataFolder/LeGa/${inputRegressDir}/$fileName" \
-                    "$dataFolder/MaCh/${inputRegressDir}/$fileName" \
-                    "$dataFolder/MaKi/${inputRegressDir}/$fileName" \
-                    "$dataFolder/MaKM/${inputRegressDir}/$fileName" \
-                    "$dataFolder/NaCa/${inputRegressDir}/$fileName" \
-                    "$dataFolder/NiDe/${inputRegressDir}/$fileName" \
-                    "$dataFolder/RaEM/${inputRegressDir}/$fileName" \
-                    "$dataFolder/RaZi/${inputRegressDir}/$fileName" \
-                    "$dataFolder/SaGa/${inputRegressDir}/$fileName" \
-                    "$dataFolder/SoSe/${inputRegressDir}/$fileName"
+                    "$dataFolder/XXX/${inputRegressDir}/$fileName" \
+                    "$dataFolder/XXX/${inputRegressDir}/$fileName" \
+                    "$dataFolder/XXX/${inputRegressDir}/$fileName" 
       endif
 
       echo `3dmaskave -q -mask $atlasMask "$ModelresultFolder/mean_subj_PW_t_Hick+tlrc"`   >  "$ModelresultFolder/mean_subj_PW_t_TvsR.hick.1D"
-      1dplot -ps -one -xlabel 'scan number' -ylabel 'CMRO2 in areas activated through BOLD and ASL (RRF)' "$dataFolder/AlPu/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_PW_t_TvsR.hick.1D" | gs -r100 -sOutputFile="images/mean_PW_t_interMask_TvsR_hick.bmp" -sDEVICE=bmp256
+      1dplot -ps -one -xlabel 'scan number' -ylabel 'CMRO2 in areas activated through BOLD and ASL (RRF)' "$dataFolder/XXX/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_PW_t_TvsR.hick.1D" | gs -r100 -sOutputFile="images/mean_PW_t_interMask_TvsR_hick.bmp" -sDEVICE=bmp256
 
 
       ## ---------------------------------------------------------------------------
@@ -1838,89 +1155,31 @@ endif
 
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName1 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.PW2.AlPu+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.PW2.AnCD+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.PW2.ArDC+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.PW2.BeMa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.PW2.BrMa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.PW2.ClBo+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.PW2.CoVB+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.PW2.DoBi+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.PW2.ElAc+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.PW2.ElBe+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.PW2.ElCo+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.PW2.HiCh+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.PW2.JoDM+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.PW2.JoDP+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.PW2.LeGa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.PW2.MaCh+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.PW2.MaKi+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.PW2.MaKM+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.PW2.NaCa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.PW2.NiDe+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.PW2.RaEM+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.PW2.RaZi+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.PW2.SaGa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.PW2.SoSe+tlrc.HEAD[6]"
-
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"
 
       set outFileName2 = $ModelresultFolder/ASL_pos_intersection_voxels_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName2 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.PW2.AlPu+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.PW2.AnCD+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.PW2.ArDC+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.PW2.BeMa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.PW2.BrMa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.PW2.ClBo+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.PW2.CoVB+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.PW2.DoBi+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.PW2.ElAc+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.PW2.ElBe+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.PW2.ElCo+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.PW2.HiCh+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.PW2.JoDM+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.PW2.JoDP+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.PW2.LeGa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.PW2.MaCh+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.PW2.MaKi+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.PW2.MaKM+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.PW2.NaCa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.PW2.NiDe+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.PW2.RaEM+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.PW2.RaZi+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.PW2.SaGa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.PW2.SoSe+tlrc.HEAD[10]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"
 
       set outFileName4 = $ModelresultFolder/ASL_pos_intersection_voxels_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName4 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.PW2.AlPu+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.PW2.AnCD+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.PW2.ArDC+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.PW2.BeMa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.PW2.BrMa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.PW2.ClBo+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.PW2.CoVB+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.PW2.DoBi+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.PW2.ElAc+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.PW2.ElBe+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.PW2.ElCo+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.PW2.HiCh+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.PW2.JoDM+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.PW2.JoDP+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.PW2.LeGa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.PW2.MaCh+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.PW2.MaKi+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.PW2.MaKM+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.PW2.NaCa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.PW2.NiDe+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.PW2.RaEM+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.PW2.RaZi+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.PW2.SaGa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.PW2.SoSe+tlrc.HEAD[14]" 
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]" 
 
       set hereDir = "$PWD"
       set csvFileName = "ASL_intersect_clust_mask_voxel_data.csv"
@@ -1935,89 +1194,32 @@ endif
 
       3dmaskdump  -mask $maskASL \
                   -noijk -o $outFileName1 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.PW2.AlPu+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.PW2.AnCD+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.PW2.ArDC+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.PW2.BeMa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.PW2.BrMa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.PW2.ClBo+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.PW2.CoVB+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.PW2.DoBi+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.PW2.ElAc+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.PW2.ElBe+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.PW2.ElCo+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.PW2.HiCh+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.PW2.JoDM+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.PW2.JoDP+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.PW2.LeGa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.PW2.MaCh+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.PW2.MaKi+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.PW2.MaKM+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.PW2.NaCa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.PW2.NiDe+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.PW2.RaEM+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.PW2.RaZi+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.PW2.SaGa+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.PW2.SoSe+tlrc.HEAD[6]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"
 
 
       set outFileName2 = $ModelresultFolder/ASL_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $maskASL \
                   -noijk -o $outFileName2 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.PW2.AlPu+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.PW2.AnCD+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.PW2.ArDC+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.PW2.BeMa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.PW2.BrMa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.PW2.ClBo+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.PW2.CoVB+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.PW2.DoBi+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.PW2.ElAc+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.PW2.ElBe+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.PW2.ElCo+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.PW2.HiCh+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.PW2.JoDM+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.PW2.JoDP+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.PW2.LeGa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.PW2.MaCh+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.PW2.MaKi+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.PW2.MaKM+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.PW2.NaCa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.PW2.NiDe+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.PW2.RaEM+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.PW2.RaZi+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.PW2.SaGa+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.PW2.SoSe+tlrc.HEAD[10]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"
 
       set outFileName4 = $ModelresultFolder/ASL_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $maskASL \
                   -noijk -o $outFileName4 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.PW2.AlPu+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.PW2.AnCD+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.PW2.ArDC+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.PW2.BeMa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.PW2.BrMa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.PW2.ClBo+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.PW2.CoVB+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.PW2.DoBi+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.PW2.ElAc+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.PW2.ElBe+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.PW2.ElCo+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.PW2.HiCh+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.PW2.JoDM+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.PW2.JoDP+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.PW2.LeGa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.PW2.MaCh+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.PW2.MaKi+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.PW2.MaKM+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.PW2.NaCa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.PW2.NiDe+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.PW2.RaEM+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.PW2.RaZi+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.PW2.SaGa+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.PW2.SoSe+tlrc.HEAD[14]" 
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]" 
 
       set hereDir = "$PWD"
       set csvFileName = "ASL_full_mask.csv"
@@ -2031,34 +1233,13 @@ endif
    if (! -f "$ModelresultFolder/mean_subj_BOLD_t_Hick+tlrc.HEAD" ) then
           set fileName = "dataset.MEC.r02+tlrc[0..$minNbrTR]"
           3dMean -overwrite -prefix "$ModelresultFolder/mean_subj_BOLD_t_Hick" \
-                 "$dataFolder/AlPu/${inputRegressDir}/$fileName" \
-                 "$dataFolder/AnCD/${inputRegressDir}/$fileName" \
-                 "$dataFolder/ArDC/${inputRegressDir}/$fileName" \
-                 "$dataFolder/BeMa/${inputRegressDir}/$fileName" \
-                 "$dataFolder/BrMa/${inputRegressDir}/$fileName" \
-                 "$dataFolder/HiCh/${inputRegressDir}/$fileName" \
-                 "$dataFolder/ClBo/${inputRegressDir}/$fileName" \
-                 "$dataFolder/CoVB/${inputRegressDir}/$fileName" \
-                 "$dataFolder/DoBi/${inputRegressDir}/$fileName" \
-                 "$dataFolder/ElAc/${inputRegressDir}/$fileName" \
-                 "$dataFolder/ElBe/${inputRegressDir}/$fileName" \
-                 "$dataFolder/ElCo/${inputRegressDir}/$fileName" \
-                 "$dataFolder/JoDM/${inputRegressDir}/$fileName" \
-                 "$dataFolder/JoDP/${inputRegressDir}/$fileName" \
-                 "$dataFolder/LeGa/${inputRegressDir}/$fileName" \
-                 "$dataFolder/MaCh/${inputRegressDir}/$fileName" \
-                 "$dataFolder/MaKi/${inputRegressDir}/$fileName" \
-                 "$dataFolder/MaKM/${inputRegressDir}/$fileName" \
-                 "$dataFolder/NaCa/${inputRegressDir}/$fileName" \
-                 "$dataFolder/NiDe/${inputRegressDir}/$fileName" \
-                 "$dataFolder/RaEM/${inputRegressDir}/$fileName" \
-                 "$dataFolder/RaZi/${inputRegressDir}/$fileName" \
-                 "$dataFolder/SaGa/${inputRegressDir}/$fileName" \
-                 "$dataFolder/SoSe/${inputRegressDir}/$fileName"
+                 "$dataFolder/XXX/${inputRegressDir}/$fileName" \
+                 "$dataFolder/XXX/${inputRegressDir}/$fileName" \
+                 "$dataFolder/XXX/${inputRegressDir}/$fileName" 
    endif
 
    echo `3dmaskave -q -mask $atlasMask "$ModelresultFolder/mean_subj_BOLD_t_Hick+tlrc"`   >  "$ModelresultFolder/mean_subj_BOLD_t_TvsR.hick.1D"
-   1dplot -ps -one -xlabel 'scan number' -ylabel 'CMRO2 in areas activated through BOLD and ASL (RRF)' "$dataFolder/AlPu/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_BOLD_t_TvsR.hick.1D" | gs -r100 -sOutputFile="images/mean_BOLD_t_interMask_TvsR_hick.bmp" -sDEVICE=bmp256
+   1dplot -ps -one -xlabel 'scan number' -ylabel 'CMRO2 in areas activated through BOLD and ASL (RRF)' "$dataFolder/XXX/$inputRegressDir/ideal_TaskVsRest.E2.1D" "$ModelresultFolder/mean_subj_BOLD_t_TvsR.hick.1D" | gs -r100 -sOutputFile="images/mean_BOLD_t_interMask_TvsR_hick.bmp" -sDEVICE=bmp256
 
 
    # We output a csv file of BOLD in all the voxels within the intersectional mask.
@@ -2067,89 +1248,32 @@ endif
 
    3dmaskdump  -mask $atlasMask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
 
    set outFileName2 = $ModelresultFolder/BOLD_pos_intersection_voxels_cond2.txt
    rm -f $outFileName2
    3dmaskdump  -mask $atlasMask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_pos_intersection_voxels_cond4.txt
    rm -f $outFileName4
    3dmaskdump  -mask $atlasMask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[14]" 
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]" 
 
    set hereDir = "$PWD"
    set csvFileName = "BOLD_intersect_clust_mask_voxel_data.csv"
@@ -2172,91 +1296,34 @@ endif
    rm -f $outFileName1
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
    set outFileName2 = $ModelresultFolder/BOLD_without_ASL_mask_test_cond1.txt
    rm -f $outFileName2
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_without_ASL_mask_test_cond2.txt
    rm -f $outFileName4
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[14]" 
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]" 
 
    set hereDir = "$PWD"     
-   set Home = /home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/scripts
+   set Home = XXX/hick_entropy_analysis/scripts
    set csvFileName = "BOLD_without_ASL_mask_test.csv"
    matlab -nodisplay -nosplash -nodesktop -r 'addpath(char("'"$Home"'"));cd(char("'"$hereDir"'")) ; from1d2GLMcsv("'"$csvFileName"'","'"$outFileName1"'", "'"$outFileName2"'", "'"$outFileName4"'");exit;'
               
@@ -2270,91 +1337,34 @@ endif
    rm -f $outFileName1
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
    set outFileName2 = $ModelresultFolder/BOLD_full_mask_neg_cond1.txt
    rm -f $outFileName2
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_full_mask_neg_cond2.txt
    rm -f $outFileName4
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[14]" 
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
 
    set hereDir = "$PWD"     
-   set Home = /home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/scripts
+   set Home = XXX/hick_entropy_analysis/scripts
    set csvFileName = "BOLD_full_neg_mask_test.csv"
    matlab -nodisplay -nosplash -nodesktop -r 'addpath(char("'"$Home"'"));cd(char("'"$hereDir"'")) ; from1d2GLMcsv("'"$csvFileName"'","'"$outFileName1"'", "'"$outFileName2"'", "'"$outFileName4"'");exit;'
               
@@ -2366,91 +1376,34 @@ endif
    rm -f $outFileName1
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
    set outFileName2 = $ModelresultFolder/BOLD_full_mask_test_cond1.txt
    rm -f $outFileName2
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_full_mask_test_cond2.txt
    rm -f $outFileName4
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AlPu/Analysis/CMRO2calc_classic/stats.MEC2.AlPu_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/AnCD/Analysis/CMRO2calc_classic/stats.MEC2.AnCD_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ArDC/Analysis/CMRO2calc_classic/stats.MEC2.ArDC_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BeMa/Analysis/CMRO2calc_classic/stats.MEC2.BeMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/BrMa/Analysis/CMRO2calc_classic/stats.MEC2.BrMa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ClBo/Analysis/CMRO2calc_classic/stats.MEC2.ClBo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/CoVB/Analysis/CMRO2calc_classic/stats.MEC2.CoVB_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/DoBi/Analysis/CMRO2calc_classic/stats.MEC2.DoBi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElAc/Analysis/CMRO2calc_classic/stats.MEC2.ElAc_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElBe/Analysis/CMRO2calc_classic/stats.MEC2.ElBe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/ElCo/Analysis/CMRO2calc_classic/stats.MEC2.ElCo_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/HiCh/Analysis/CMRO2calc_classic/stats.MEC2.HiCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDM/Analysis/CMRO2calc_classic/stats.MEC2.JoDM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/JoDP/Analysis/CMRO2calc_classic/stats.MEC2.JoDP_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/LeGa/Analysis/CMRO2calc_classic/stats.MEC2.LeGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaCh/Analysis/CMRO2calc_classic/stats.MEC2.MaCh_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKi/Analysis/CMRO2calc_classic/stats.MEC2.MaKi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/MaKM/Analysis/CMRO2calc_classic/stats.MEC2.MaKM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NaCa/Analysis/CMRO2calc_classic/stats.MEC2.NaCa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/NiDe/Analysis/CMRO2calc_classic/stats.MEC2.NiDe_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaEM/Analysis/CMRO2calc_classic/stats.MEC2.RaEM_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/RaZi/Analysis/CMRO2calc_classic/stats.MEC2.RaZi_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SaGa/Analysis/CMRO2calc_classic/stats.MEC2.SaGa_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/SoSe/Analysis/CMRO2calc_classic/stats.MEC2.SoSe_REML+tlrc.HEAD[14]" 
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]" 
 
    set hereDir = "$PWD"     
-   set Home = /home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/scripts
+   set Home = XXX/hick_entropy_analysis/scripts
    set csvFileName = "BOLD_full_mask_test.csv"
    matlab -nodisplay -nosplash -nodesktop -r 'addpath(char("'"$Home"'"));cd(char("'"$hereDir"'")) ; from1d2GLMcsv("'"$csvFileName"'","'"$outFileName1"'", "'"$outFileName2"'", "'"$outFileName4"'");exit;'
               
