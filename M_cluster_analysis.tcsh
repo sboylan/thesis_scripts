@@ -1,24 +1,24 @@
 #!/bin/tcsh -xef
 
 # to execute via bash: 
-#   tcsh -xef M_cluster_analysis.mococo.tcsh 2>&1 | tee output.M_cluster_analysis.mococo_04_10
+#   tcsh -xef XXX.tcsh 2>&1 | tee output.XXX
 
 ### This program does t-tests for each thresholded M maps and compute overlap of intersection mask 
 ### (from BOLD and ASL t-tests and clusterization)
 ### This program comes after M_thresholding.allSubj.hick_tapping.tcsh that has thresholded the M maps.
 
 set Home = $PWD
-set githubFolder = "/home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis"
+set githubFolder = "XXX/hick_entropy_analysis"
 set results_dir = "$githubFolder/results/M_clusterization_analysis"
-set dataFolder  = "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data"
+set dataFolder  = "XXX/quantitativ_fMRI/data"
 set input_directory = "Analysis/CMRO2calc_classic"
 set CMRO2_input_directory = "Analysis/CMRO2_regression"
-set underlayMNI = "/home/mococo/abin/MNI152_2009_template_SSW.nii.gz"
+set underlayMNI = "XXX/abin/MNI152_2009_template_SSW.nii.gz"
 set ImageFolder = "$results_dir/images"
 set ModelresultFolderName = Model_results
 set ModelresultFolder = "$results_dir/$ModelresultFolderName"
 set atlas = "Schaefer_Yeo_17n_400 -atlas MNI_Glasser_HCP_v1.0 -atlas Brainnetome_1.0"
-setenv AFNI_SUPP_ATLAS "/home/mococo/abin/AFNI_atlas_spaces.niml"
+setenv AFNI_SUPP_ATLAS "XXX/abin/AFNI_atlas_spaces.niml"
 
 set NN = 2
 set GMmask = "$githubFolder/results/meanGMmask+tlrc"
@@ -47,32 +47,8 @@ foreach reg ( $regressors )
                -resid ./$ModelresultFolderName/errtsM_$reg -ACF -Clustsim \
                -prefix_clustsim ccM_$reg -tempdir ./$ModelresultFolderName/ClustSimdata \
                -mask $GMmask  -setA M                                            \
-               01 "$dataFolder/AlPu/${input_directory}/$file_name" \
-               02 "$dataFolder/AnCD/${input_directory}/$file_name" \
-               03 "$dataFolder/ArDC/${input_directory}/$file_name" \
-               04 "$dataFolder/BeMa/${input_directory}/$file_name" \
-               06 "$dataFolder/ClBo/${input_directory}/$file_name" \
-               07 "$dataFolder/CoVB/${input_directory}/$file_name" \
-               08 "$dataFolder/DoBi/${input_directory}/$file_name" \
-               09 "$dataFolder/ElBe/${input_directory}/$file_name" \
-               10 "$dataFolder/ElCo/${input_directory}/$file_name" \
-               11 "$dataFolder/HiCh/${input_directory}/$file_name" \
-               12 "$dataFolder/JoDM/${input_directory}/$file_name" \
-               13 "$dataFolder/JoDP/${input_directory}/$file_name" \
-               14 "$dataFolder/LeGa/${input_directory}/$file_name" \
-               15 "$dataFolder/MaCh/${input_directory}/$file_name" \
-               16 "$dataFolder/MaKi/${input_directory}/$file_name" \
-               17 "$dataFolder/MaKM/${input_directory}/$file_name" \
-               19 "$dataFolder/NaCa/${input_directory}/$file_name" \
-               20 "$dataFolder/NiDe/${input_directory}/$file_name" \
-               21 "$dataFolder/RaEM/${input_directory}/$file_name" \
-               22 "$dataFolder/RaZi/${input_directory}/$file_name" \
-               23 "$dataFolder/BrMa/${input_directory}/$file_name" \
-               24 "$dataFolder/ElAc/${input_directory}/$file_name" \
-               25 "$dataFolder/CeHa/${input_directory}/$file_name" \
-               26 "$dataFolder/MiAn/${input_directory}/$file_name" \
-               18 "$dataFolder/SaGa/${input_directory}/$file_name" \
-               5 "$dataFolder/SoSe/${input_directory}/$file_name"
+               01 "$dataFolder/XXX/${input_directory}/$file_name" \
+               02 "$dataFolder/XXX/${input_directory}/$file_name" 
    endif
 
  
@@ -140,32 +116,8 @@ foreach reg ( $regressors )
                -resid ./$ModelresultFolderName/errtsM_$reg -ACF -Clustsim \
                -prefix_clustsim ccM_$reg -tempdir ./$ModelresultFolderName/ClustSimdata \
                -mask $GMmask  -setA M                                            \
-               01 "$dataFolder/AlPu/${input_directory}/$file_name" \
-               02 "$dataFolder/AnCD/${input_directory}/$file_name" \
-               03 "$dataFolder/ArDC/${input_directory}/$file_name" \
-               04 "$dataFolder/BeMa/${input_directory}/$file_name" \
-               06 "$dataFolder/ClBo/${input_directory}/$file_name" \
-               07 "$dataFolder/CoVB/${input_directory}/$file_name" \
-               08 "$dataFolder/DoBi/${input_directory}/$file_name" \
-               09 "$dataFolder/ElBe/${input_directory}/$file_name" \
-               10 "$dataFolder/ElCo/${input_directory}/$file_name" \
-               11 "$dataFolder/HiCh/${input_directory}/$file_name" \
-               12 "$dataFolder/JoDM/${input_directory}/$file_name" \
-               13 "$dataFolder/JoDP/${input_directory}/$file_name" \
-               14 "$dataFolder/LeGa/${input_directory}/$file_name" \
-               15 "$dataFolder/MaCh/${input_directory}/$file_name" \
-               16 "$dataFolder/MaKi/${input_directory}/$file_name" \
-               17 "$dataFolder/MaKM/${input_directory}/$file_name" \
-               19 "$dataFolder/NaCa/${input_directory}/$file_name" \
-               20 "$dataFolder/NiDe/${input_directory}/$file_name" \
-               21 "$dataFolder/RaEM/${input_directory}/$file_name" \
-               22 "$dataFolder/RaZi/${input_directory}/$file_name" \
-               23 "$dataFolder/BrMa/${input_directory}/$file_name" \
-               24 "$dataFolder/ElAc/${input_directory}/$file_name" \
-               25 "$dataFolder/CeHa/${input_directory}/$file_name" \
-               26 "$dataFolder/MiAn/${input_directory}/$file_name" \
-               18 "$dataFolder/SaGa/${input_directory}/$file_name" \
-               5 "$dataFolder/SoSe/${input_directory}/$file_name"
+               01 "$dataFolder/XXX/${input_directory}/$file_name" \
+               02 "$dataFolder/XXX/${input_directory}/$file_name" 
    endif
 
    set boundary_M = `p2dsetstat -quiet -inset "$ModelresultFolder/TtestM_${reg}_tap+tlrc[1]" -1sided -pval $pValThresholdM`
