@@ -1,16 +1,16 @@
 #!/bin/tcsh -xef
 
 # to execute via bash: 
-#   tcsh -xef CMRO2_plots_and_calc.hick.tcsh 2>&1 | tee output.CMRO2_plots_and_calc_calc.hick.10_10
+#   tcsh -xef XXX.tcsh 2>&1 | tee output.XXX
 
 
 ### In this script, we will clean and order CMRO2 data from Hick experiment.
 ### This will results in at least 3*4 analysis as we will do task versus rest analysis and plots, but also for all 3 conditions;
 ### for BOLD, ASL and CMRO2. CMRO2 HRF and RRF will be calculated. Concerning entropy conditions, they were calculated via davis equation using
 ### the three beta coefficient of each BOLD and ASL. ANother methode would be to use the coefficients from the regression of CMRO2(t) that has
-### calculated before. THe masks used here were computed in Hick_cluster_analysis.mococo.tcsh
+### calculated before. The masks used here were computed in Hick_cluster_analysis.tcsh
 ### This script necessicates a mask within wXXX voxels will be studied. 
-### This mask is calculated in a previous script Hick_cluster_analysis.mococo.tcsh
+### This mask is calculated in a previous script Hick_cluster_analysis.tcsh
 ### We do not create an output folder, the result folder has to be the same as the one with the intersectional atlas.
 ### This previous step obviously need pre-processing, fisrst and second level analysis to have been done on each subject.
 ### We will use the intersectional atlas for all our analysis, to compare the results between BOLD, ASL and CMRO2
@@ -48,10 +48,6 @@ set atlas = "Schaefer_Yeo_17n_400 -atlas MNI_Glasser_HCP_v1.0 -atlas Brainnetome
 
 set networkFolderName = "network_analysis"
 
-
-if ( `whoami` == mococo ) then
-   setenv AFNI_SUPP_ATLAS "/home/mococo/abin/AFNI_atlas_spaces.niml"
-endif
 
 set mask =  "$Home/mask_group+tlrc"
 set GMmask = ".$githubAdress/meanGMmask+tlrc"
