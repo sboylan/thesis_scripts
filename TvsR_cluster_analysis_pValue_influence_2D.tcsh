@@ -1,7 +1,7 @@
 #!/bin/tcsh -xef
 
 # to execute via bash: 
-#   tcsh -xef TvsR_cluster_analysis_pValue_influence_2D.mococo.tcsh 2>&1 | tee output.TvsR_cluster_analysis_pValue_influence_2D.mococo_19_09
+#   tcsh -xef XXX.tcsh 2>&1 | tee output.XXX
 
 ### This script analysis the size of the intersection of BOLD and ASL clusters, with regard with the p-value chosen fro PW and for BOLD.
 ### It outputs a table that help select a combination of p-values.
@@ -10,16 +10,16 @@
 
 set Home = $PWD
 set results_dir = '../results/task_versus_rest_clusterization_analysis_pValue_influence_2D'
-set dataFolder  = '/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data'
+set dataFolder  = 'XXX/quantitativ_fMRI/data'
 set input_directory = "Analysis/CMRO2calc_classic"
-set underlayMNI = "/home/mococo/abin/MNI152_2009_template_SSW.nii.gz"
+set underlayMNI = "XXX/abin/MNI152_2009_template_SSW.nii.gz"
 set ImageFolder = "images"
 set ModelresultFolder = "Model_results"
 # set suffix = "pValTest"
 set nameOfPvalnalaysis = "pvalue_influence_on_number_of_voxel_in_mask_2D.1D"
 
 set atlas = "Schaefer_Yeo_17n_400 -atlas MNI_Glasser_HCP_v1.0 -atlas Brainnetome_1.0"
-setenv AFNI_SUPP_ATLAS "/home/mococo/abin/AFNI_atlas_spaces.niml"
+setenv AFNI_SUPP_ATLAS "XXX/abin/AFNI_atlas_spaces.niml"
 set GMmask = "../meanGMmask+tlrc"
 
 set pVals = (0.001 0.003 0.005 0.007 0.01 0.03 0.05 0.1)
@@ -41,32 +41,8 @@ if (! -f "./$ModelresultFolder/TtestTvsR_PW+tlrc.HEAD" ) then
     3dttest++ -overwrite -prefix ./$ModelresultFolder/TtestTvsR_PW                  \
              -resid ./$ModelresultFolder/errtsTvsR_PW -ACF -Clustsim -prefix_clustsim ccTvsR_PW -tempdir ./$ModelresultFolder/ClustSimdata \
              -mask $GMmask  -setA taskVsRest_PW                                            \
-             01 "$dataFolder/AlPu/${input_directory}/stats.PW2_TvsR.AlPu+tlrc.BRIK[6]" \
-             02 "$dataFolder/AnCD/${input_directory}/stats.PW2_TvsR.AnCD+tlrc.BRIK[6]" \
-             03 "$dataFolder/ArDC/${input_directory}/stats.PW2_TvsR.ArDC+tlrc.BRIK[6]" \
-             04 "$dataFolder/BeMa/${input_directory}/stats.PW2_TvsR.BeMa+tlrc.BRIK[6]" \
-             05 "$dataFolder/CeHa/${input_directory}/stats.PW2_TvsR.CeHa+tlrc.BRIK[6]" \
-             06 "$dataFolder/ClBo/${input_directory}/stats.PW2_TvsR.ClBo+tlrc.BRIK[6]" \
-             07 "$dataFolder/CoVB/${input_directory}/stats.PW2_TvsR.CoVB+tlrc.BRIK[6]" \
-             08 "$dataFolder/DoBi/${input_directory}/stats.PW2_TvsR.DoBi+tlrc.BRIK[6]" \
-             09 "$dataFolder/ElBe/${input_directory}/stats.PW2_TvsR.ElBe+tlrc.BRIK[6]" \
-             10 "$dataFolder/ElCo/${input_directory}/stats.PW2_TvsR.ElCo+tlrc.BRIK[6]" \
-             11 "$dataFolder/HiCh/${input_directory}/stats.PW2_TvsR.HiCh+tlrc.BRIK[6]" \
-             12 "$dataFolder/JoDM/${input_directory}/stats.PW2_TvsR.JoDM+tlrc.BRIK[6]" \
-             13 "$dataFolder/JoDP/${input_directory}/stats.PW2_TvsR.JoDP+tlrc.BRIK[6]" \
-             14 "$dataFolder/LeGa/${input_directory}/stats.PW2_TvsR.LeGa+tlrc.BRIK[6]" \
-             15 "$dataFolder/MaCh/${input_directory}/stats.PW2_TvsR.MaCh+tlrc.BRIK[6]" \
-             16 "$dataFolder/MaKi/${input_directory}/stats.PW2_TvsR.MaKi+tlrc.BRIK[6]" \
-             17 "$dataFolder/MaKM/${input_directory}/stats.PW2_TvsR.MaKM+tlrc.BRIK[6]" \
-             18 "$dataFolder/MiAn/${input_directory}/stats.PW2_TvsR.MiAn+tlrc.BRIK[6]" \
-             19 "$dataFolder/NaCa/${input_directory}/stats.PW2_TvsR.NaCa+tlrc.BRIK[6]" \
-             20 "$dataFolder/NiDe/${input_directory}/stats.PW2_TvsR.NiDe+tlrc.BRIK[6]" \
-             21 "$dataFolder/RaEM/${input_directory}/stats.PW2_TvsR.RaEM+tlrc.BRIK[6]" \
-             22 "$dataFolder/RaZi/${input_directory}/stats.PW2_TvsR.RaZi+tlrc.BRIK[6]" \
-             23 "$dataFolder/SaGa/${input_directory}/stats.PW2_TvsR.SaGa+tlrc.BRIK[6]" \
-             24 "$dataFolder/SoSe/${input_directory}/stats.PW2_TvsR.SoSe+tlrc.BRIK[6]" \
-             25 "$dataFolder/BrMa/${input_directory}/stats.PW2_TvsR.BrMa+tlrc.BRIK[6]" \
-             26 "$dataFolder/ElAc/${input_directory}/stats.PW2_TvsR.ElAc+tlrc.BRIK[6]"
+             01 "$dataFolder/XXX/${input_directory}/stats.PW2_TvsR.XXX+tlrc.BRIK[6]" \
+             02 "$dataFolder/XXX/${input_directory}/stats.PW2_TvsR.XXX+tlrc.BRIK[6]" 
 endif
 
 if (! -f "./$ModelresultFolder/TtestTvsR_BOLD+tlrc.HEAD" ) then
@@ -75,32 +51,8 @@ if (! -f "./$ModelresultFolder/TtestTvsR_BOLD+tlrc.HEAD" ) then
     3dttest++ -overwrite -prefix ./$ModelresultFolder/TtestTvsR_BOLD                  \
              -resid ./$ModelresultFolder/errts_TvsR_BOLD -ACF -Clustsim -prefix_clustsim ccTvsR_BOLD -tempdir ./$ModelresultFolder/ClustSimdata \
              -mask $GMmask  -setA taskVsRest_BOLD                                            \
-             01 "$dataFolder/AlPu/${input_directory}/stats.MEC2_TvsR.AlPu_REML+tlrc.BRIK[6]" \
-             02 "$dataFolder/AnCD/${input_directory}/stats.MEC2_TvsR.AnCD_REML+tlrc.BRIK[6]" \
-             03 "$dataFolder/ArDC/${input_directory}/stats.MEC2_TvsR.ArDC_REML+tlrc.BRIK[6]" \
-             04 "$dataFolder/BeMa/${input_directory}/stats.MEC2_TvsR.BeMa_REML+tlrc.BRIK[6]" \
-             05 "$dataFolder/CeHa/${input_directory}/stats.MEC2_TvsR.CeHa_REML+tlrc.BRIK[6]" \
-             06 "$dataFolder/ClBo/${input_directory}/stats.MEC2_TvsR.ClBo_REML+tlrc.BRIK[6]" \
-             07 "$dataFolder/CoVB/${input_directory}/stats.MEC2_TvsR.CoVB_REML+tlrc.BRIK[6]" \
-             08 "$dataFolder/DoBi/${input_directory}/stats.MEC2_TvsR.DoBi_REML+tlrc.BRIK[6]" \
-             09 "$dataFolder/ElBe/${input_directory}/stats.MEC2_TvsR.ElBe_REML+tlrc.BRIK[6]" \
-             10 "$dataFolder/ElCo/${input_directory}/stats.MEC2_TvsR.ElCo_REML+tlrc.BRIK[6]" \
-             11 "$dataFolder/HiCh/${input_directory}/stats.MEC2_TvsR.HiCh_REML+tlrc.BRIK[6]" \
-             12 "$dataFolder/JoDM/${input_directory}/stats.MEC2_TvsR.JoDM_REML+tlrc.BRIK[6]" \
-             13 "$dataFolder/JoDP/${input_directory}/stats.MEC2_TvsR.JoDP_REML+tlrc.BRIK[6]" \
-             14 "$dataFolder/LeGa/${input_directory}/stats.MEC2_TvsR.LeGa_REML+tlrc.BRIK[6]" \
-             15 "$dataFolder/MaCh/${input_directory}/stats.MEC2_TvsR.MaCh_REML+tlrc.BRIK[6]" \
-             16 "$dataFolder/MaKi/${input_directory}/stats.MEC2_TvsR.MaKi_REML+tlrc.BRIK[6]" \
-             17 "$dataFolder/MaKM/${input_directory}/stats.MEC2_TvsR.MaKM_REML+tlrc.BRIK[6]" \
-             18 "$dataFolder/MiAn/${input_directory}/stats.MEC2_TvsR.MiAn_REML+tlrc.BRIK[6]" \
-             19 "$dataFolder/NaCa/${input_directory}/stats.MEC2_TvsR.NaCa_REML+tlrc.BRIK[6]" \
-             20 "$dataFolder/NiDe/${input_directory}/stats.MEC2_TvsR.NiDe_REML+tlrc.BRIK[6]" \
-             21 "$dataFolder/RaEM/${input_directory}/stats.MEC2_TvsR.RaEM_REML+tlrc.BRIK[6]" \
-             22 "$dataFolder/RaZi/${input_directory}/stats.MEC2_TvsR.RaZi_REML+tlrc.BRIK[6]" \
-             23 "$dataFolder/SaGa/${input_directory}/stats.MEC2_TvsR.SaGa_REML+tlrc.BRIK[6]" \
-             24 "$dataFolder/SoSe/${input_directory}/stats.MEC2_TvsR.SoSe_REML+tlrc.BRIK[6]" \
-             25 "$dataFolder/BrMa/${input_directory}/stats.MEC2_TvsR.BrMa_REML+tlrc.BRIK[6]" \
-             26 "$dataFolder/ElAc/${input_directory}/stats.MEC2_TvsR.ElAc_REML+tlrc.BRIK[6]"
+             01 "$dataFolder/XXX/${input_directory}/stats.MEC2_TvsR.XXX_REML+tlrc.BRIK[6]" \
+             02 "$dataFolder/XXX/${input_directory}/stats.MEC2_TvsR.XXX_REML+tlrc.BRIK[6]" 
 endif
 
 
@@ -178,30 +130,8 @@ if (! -f "./$ModelresultFolder/TtestTvsR_PW_cleaned+tlrc.HEAD" ) then
     3dttest++ -overwrite -prefix ./$ModelresultFolder/TtestTvsR_PW_cleaned                  \
              -resid ./$ModelresultFolder/errtsTvsR_PW_cleaned -ACF -Clustsim -prefix_clustsim ccTvsR_PW_cleaned -tempdir ./$ModelresultFolder/ClustSimdata \
              -mask $GMmask  -setA taskVsRest_PW_cleaned                                            \
-             01 "$dataFolder/AlPu/${input_directory}/stats.PW2_TvsR.AlPu+tlrc.BRIK[6]" \
-             02 "$dataFolder/AnCD/${input_directory}/stats.PW2_TvsR.AnCD+tlrc.BRIK[6]" \
-             03 "$dataFolder/ArDC/${input_directory}/stats.PW2_TvsR.ArDC+tlrc.BRIK[6]" \
-             04 "$dataFolder/BeMa/${input_directory}/stats.PW2_TvsR.BeMa+tlrc.BRIK[6]" \
-             06 "$dataFolder/ClBo/${input_directory}/stats.PW2_TvsR.ClBo+tlrc.BRIK[6]" \
-             07 "$dataFolder/CoVB/${input_directory}/stats.PW2_TvsR.CoVB+tlrc.BRIK[6]" \
-             08 "$dataFolder/DoBi/${input_directory}/stats.PW2_TvsR.DoBi+tlrc.BRIK[6]" \
-             09 "$dataFolder/ElBe/${input_directory}/stats.PW2_TvsR.ElBe+tlrc.BRIK[6]" \
-             10 "$dataFolder/ElCo/${input_directory}/stats.PW2_TvsR.ElCo+tlrc.BRIK[6]" \
-             11 "$dataFolder/HiCh/${input_directory}/stats.PW2_TvsR.HiCh+tlrc.BRIK[6]" \
-             12 "$dataFolder/JoDM/${input_directory}/stats.PW2_TvsR.JoDM+tlrc.BRIK[6]" \
-             13 "$dataFolder/JoDP/${input_directory}/stats.PW2_TvsR.JoDP+tlrc.BRIK[6]" \
-             14 "$dataFolder/LeGa/${input_directory}/stats.PW2_TvsR.LeGa+tlrc.BRIK[6]" \
-             15 "$dataFolder/MaCh/${input_directory}/stats.PW2_TvsR.MaCh+tlrc.BRIK[6]" \
-             16 "$dataFolder/MaKi/${input_directory}/stats.PW2_TvsR.MaKi+tlrc.BRIK[6]" \
-             17 "$dataFolder/MaKM/${input_directory}/stats.PW2_TvsR.MaKM+tlrc.BRIK[6]" \
-             19 "$dataFolder/NaCa/${input_directory}/stats.PW2_TvsR.NaCa+tlrc.BRIK[6]" \
-             20 "$dataFolder/NiDe/${input_directory}/stats.PW2_TvsR.NiDe+tlrc.BRIK[6]" \
-             21 "$dataFolder/RaEM/${input_directory}/stats.PW2_TvsR.RaEM+tlrc.BRIK[6]" \
-             22 "$dataFolder/RaZi/${input_directory}/stats.PW2_TvsR.RaZi+tlrc.BRIK[6]" \
-             23 "$dataFolder/SaGa/${input_directory}/stats.PW2_TvsR.SaGa+tlrc.BRIK[6]" \
-             24 "$dataFolder/SoSe/${input_directory}/stats.PW2_TvsR.SoSe+tlrc.BRIK[6]" \
-             5 "$dataFolder/BrMa/${input_directory}/stats.PW2_TvsR.BrMa+tlrc.BRIK[6]" \
-             18 "$dataFolder/ElAc/${input_directory}/stats.PW2_TvsR.ElAc+tlrc.BRIK[6]"
+             01 "$dataFolder/XXX/${input_directory}/stats.PW2_TvsR.XXX+tlrc.BRIK[6]" \
+             02 "$dataFolder/XXX/${input_directory}/stats.PW2_TvsR.XXX+tlrc.BRIK[6]"
 endif
 
 if (! -f "./$ModelresultFolder/TtestTvsR_BOLD_cleaned+tlrc.HEAD" ) then
@@ -210,30 +140,8 @@ if (! -f "./$ModelresultFolder/TtestTvsR_BOLD_cleaned+tlrc.HEAD" ) then
     3dttest++ -overwrite -prefix ./$ModelresultFolder/TtestTvsR_BOLD_cleaned                  \
              -resid ./$ModelresultFolder/errts_TvsR_BOLD_cleaned -ACF -Clustsim -prefix_clustsim ccTvsR_BOLD_cleaned -tempdir ./$ModelresultFolder/ClustSimdata \
              -mask $GMmask  -setA taskVsRest_BOLD_cleaned                                            \
-             01 "$dataFolder/AlPu/${input_directory}/stats.MEC2_TvsR.AlPu_REML+tlrc.BRIK[6]" \
-             02 "$dataFolder/AnCD/${input_directory}/stats.MEC2_TvsR.AnCD_REML+tlrc.BRIK[6]" \
-             03 "$dataFolder/ArDC/${input_directory}/stats.MEC2_TvsR.ArDC_REML+tlrc.BRIK[6]" \
-             04 "$dataFolder/BeMa/${input_directory}/stats.MEC2_TvsR.BeMa_REML+tlrc.BRIK[6]" \
-             06 "$dataFolder/ClBo/${input_directory}/stats.MEC2_TvsR.ClBo_REML+tlrc.BRIK[6]" \
-             07 "$dataFolder/CoVB/${input_directory}/stats.MEC2_TvsR.CoVB_REML+tlrc.BRIK[6]" \
-             08 "$dataFolder/DoBi/${input_directory}/stats.MEC2_TvsR.DoBi_REML+tlrc.BRIK[6]" \
-             09 "$dataFolder/ElBe/${input_directory}/stats.MEC2_TvsR.ElBe_REML+tlrc.BRIK[6]" \
-             10 "$dataFolder/ElCo/${input_directory}/stats.MEC2_TvsR.ElCo_REML+tlrc.BRIK[6]" \
-             11 "$dataFolder/HiCh/${input_directory}/stats.MEC2_TvsR.HiCh_REML+tlrc.BRIK[6]" \
-             12 "$dataFolder/JoDM/${input_directory}/stats.MEC2_TvsR.JoDM_REML+tlrc.BRIK[6]" \
-             13 "$dataFolder/JoDP/${input_directory}/stats.MEC2_TvsR.JoDP_REML+tlrc.BRIK[6]" \
-             14 "$dataFolder/LeGa/${input_directory}/stats.MEC2_TvsR.LeGa_REML+tlrc.BRIK[6]" \
-             15 "$dataFolder/MaCh/${input_directory}/stats.MEC2_TvsR.MaCh_REML+tlrc.BRIK[6]" \
-             16 "$dataFolder/MaKi/${input_directory}/stats.MEC2_TvsR.MaKi_REML+tlrc.BRIK[6]" \
-             17 "$dataFolder/MaKM/${input_directory}/stats.MEC2_TvsR.MaKM_REML+tlrc.BRIK[6]" \
-             19 "$dataFolder/NaCa/${input_directory}/stats.MEC2_TvsR.NaCa_REML+tlrc.BRIK[6]" \
-             20 "$dataFolder/NiDe/${input_directory}/stats.MEC2_TvsR.NiDe_REML+tlrc.BRIK[6]" \
-             21 "$dataFolder/RaEM/${input_directory}/stats.MEC2_TvsR.RaEM_REML+tlrc.BRIK[6]" \
-             22 "$dataFolder/RaZi/${input_directory}/stats.MEC2_TvsR.RaZi_REML+tlrc.BRIK[6]" \
-             23 "$dataFolder/SaGa/${input_directory}/stats.MEC2_TvsR.SaGa_REML+tlrc.BRIK[6]" \
-             24 "$dataFolder/SoSe/${input_directory}/stats.MEC2_TvsR.SoSe_REML+tlrc.BRIK[6]" \
-             5 "$dataFolder/BrMa/${input_directory}/stats.MEC2_TvsR.BrMa_REML+tlrc.BRIK[6]" \
-             18 "$dataFolder/ElAc/${input_directory}/stats.MEC2_TvsR.ElAc_REML+tlrc.BRIK[6]"
+             01 "$dataFolder/XXX/${input_directory}/stats.MEC2_TvsR.XXX_REML+tlrc.BRIK[6]" \
+             02 "$dataFolder/XXX/${input_directory}/stats.MEC2_TvsR.XXX_REML+tlrc.BRIK[6]" 
 endif
 
 set nameOfPvalnalaysis = "pvalue_influence_on_number_of_voxel_in_mask_2D_without_outliers.1D"
