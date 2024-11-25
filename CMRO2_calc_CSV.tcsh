@@ -35,12 +35,12 @@
 
 
 set Home = $PWD
-set githubAdress = "/home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/results"
+set githubAdress = "XXX/hick_entropy_analysis/results"
 set results_dir = 'task_versus_rest_clusterization_analysis'
-set dataFolder  = '/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data'
+set dataFolder  = 'XXX/quantitativ_fMRI/data'
 set input_directory = "Analysis/CMRO2calc_classic"
 set input_dir_CMRO2_reg = "Analysis/CMRO2_regression"
-set underlayMNI = "/home/mococo/abin/MNI152_2009_template_SSW.nii.gz"
+set underlayMNI = "XXX/abin/MNI152_2009_template_SSW.nii.gz"
 set ModelresultFolder = "Model_results"
 set inputRegressDir = "Analysis/regression_factorization"
 set minNbrTR = 226
@@ -50,7 +50,7 @@ set networkFolderName = "network_analysis"
 
 
 if ( `whoami` == mococo ) then
-   setenv AFNI_SUPP_ATLAS "/home/mococo/abin/AFNI_atlas_spaces.niml"
+   setenv AFNI_SUPP_ATLAS "XXX/abin/AFNI_atlas_spaces.niml"
 endif
 
 set mask =  "$Home/mask_group+tlrc"
@@ -702,28 +702,28 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName1 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
 
       set outFileName2 = $ModelresultFolder/CMRO2_HRF_pos_intersection_voxels_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName2 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
       set outFileName4 = $ModelresultFolder/CMRO2_HRF_pos_intersection_voxels_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName4 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
       set hereDir = "$PWD"
       set csvFileName = "CMRO2_regression_HRF_intersect_mask.csv"
@@ -737,28 +737,28 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName1 \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
 
       set outFileName2 = $ModelresultFolder/CMRO2_HRF_pos_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
       set outFileName4 = $ModelresultFolder/CMRO2_HRF_pos_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                   /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                   XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                   
       set hereDir = "$PWD"
@@ -774,29 +774,29 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
 
          set outFileName2 = $ModelresultFolder/CMRO2_HRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_HRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                      
          set hereDir = "$PWD"
@@ -814,30 +814,30 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2posMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
                    
 
          set outFileName2 = $ModelresultFolder/CMRO2_calculated_HRF_pos_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2posMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_calculated_HRF_pos_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2posMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                      
          set hereDir = "$PWD"
@@ -854,30 +854,30 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[2]' 
                    
 
          set outFileName2 = $ModelresultFolder/CMRO2_calculated_HRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_calculated_HRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]'\
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' \
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_HRF_Hick_conds+tlrc.HEAD'[10]' 
                   
                      
          set hereDir = "$PWD"
@@ -909,30 +909,30 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName1 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
       set outFileName2 = $ModelresultFolder/CMRO2_RRF_pos_intersection_voxels_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
       set outFileName4 = $ModelresultFolder/CMRO2_RRF_pos_intersection_voxels_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                   
       set hereDir = "$PWD"
@@ -947,30 +947,30 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName1 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
       set outFileName2 = $ModelresultFolder/CMRO2_RRF_pos_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
       set outFileName4 = $ModelresultFolder/CMRO2_RRF_pos_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                   
       set hereDir = "$PWD"
@@ -986,30 +986,30 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
          set outFileName2 = $ModelresultFolder/CMRO2_RRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_RRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                      
          set hereDir = "$PWD"
@@ -1026,30 +1026,30 @@ endif
       rm -f $outFileName1
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName1 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
       set outFileName2 = $ModelresultFolder/CMRO2_calculated_RRF_pos_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName2 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
       set outFileName4 = $ModelresultFolder/CMRO2_calculated_RRF_pos_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $CMRO2posMask \
                   -noijk -o $outFileName4 \
-                  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
+                  XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                   
       set hereDir = "$PWD"
@@ -1066,30 +1066,30 @@ endif
          rm -f $outFileName1
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName1 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]'\
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[2]' 
 
 
          set outFileName2 = $ModelresultFolder/CMRO2_calculated_RRF_neg_full_mask_cond2.txt
          rm -f $outFileName2
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName2 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
-                      /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]'\
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' \
+                      XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[6]' 
 
 
          set outFileName4 = $ModelresultFolder/CMRO2_calculated_RRF_neg_full_mask_cond4.txt
          rm -f $outFileName4
          3dmaskdump  -mask $CMRO2negMask \
                      -noijk -o $outFileName4 \
-                     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
-                         /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
+                     XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]'\
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' \
+                         XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2_regression/stats.CMRO2_RRF_Hick_conds+tlrc.HEAD'[10]' 
 
                      
          set hereDir = "$PWD"
@@ -1120,29 +1120,29 @@ endif
 
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName1 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"
 
 
       set outFileName2 = $ModelresultFolder/ASL_pos_intersection_voxels_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName2 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"
 
       set outFileName4 = $ModelresultFolder/ASL_pos_intersection_voxels_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $atlasMask \
                   -noijk -o $outFileName4 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"
 
       set hereDir = "$PWD"
       set csvFileName = "ASL_intersect_clust_mask_voxel_data.csv"
@@ -1157,29 +1157,29 @@ endif
 
       3dmaskdump  -mask $maskASL \
                   -noijk -o $outFileName1 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[6]"
 
 
       set outFileName2 = $ModelresultFolder/ASL_full_mask_cond2.txt
       rm -f $outFileName2
       3dmaskdump  -mask $maskASL \
                   -noijk -o $outFileName2 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[10]"
 
       set outFileName4 = $ModelresultFolder/ASL_full_mask_cond4.txt
       rm -f $outFileName4
       3dmaskdump  -mask $maskASL \
                   -noijk -o $outFileName4 \
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
-                  "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"\
+                  "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.PW2.XXX+tlrc.HEAD[14]"
 
       set hereDir = "$PWD"
       set csvFileName = "ASL_full_mask.csv"
@@ -1209,29 +1209,29 @@ endif
 
    3dmaskdump  -mask $atlasMask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
 
    set outFileName2 = $ModelresultFolder/BOLD_pos_intersection_voxels_cond2.txt
    rm -f $outFileName2
    3dmaskdump  -mask $atlasMask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_pos_intersection_voxels_cond4.txt
    rm -f $outFileName4
    3dmaskdump  -mask $atlasMask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
 
    set hereDir = "$PWD"
    set csvFileName = "BOLD_intersect_clust_mask_voxel_data.csv"
@@ -1254,31 +1254,31 @@ endif
    rm -f $outFileName1
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
    set outFileName2 = $ModelresultFolder/BOLD_without_ASL_mask_test_cond1.txt
    rm -f $outFileName2
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_without_ASL_mask_test_cond2.txt
    rm -f $outFileName4
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
 
    set hereDir = "$PWD"     
-   set Home = /home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/scripts
+   set Home = XXX/hick_entropy_analysis/scripts
    set csvFileName = "BOLD_without_ASL_mask_test.csv"
    matlab -nodisplay -nosplash -nodesktop -r 'addpath(char("'"$Home"'"));cd(char("'"$hereDir"'")) ; from1d2GLMcsv("'"$csvFileName"'","'"$outFileName1"'", "'"$outFileName2"'", "'"$outFileName4"'");exit;'
               
@@ -1292,31 +1292,31 @@ endif
    rm -f $outFileName1
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
    set outFileName2 = $ModelresultFolder/BOLD_full_mask_neg_cond1.txt
    rm -f $outFileName2
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_full_mask_neg_cond2.txt
    rm -f $outFileName4
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]" 
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]" 
 
    set hereDir = "$PWD"     
-   set Home = /home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/scripts
+   set Home = XXX/hick_entropy_analysis/scripts
    set csvFileName = "BOLD_full_neg_mask_test.csv"
    matlab -nodisplay -nosplash -nodesktop -r 'addpath(char("'"$Home"'"));cd(char("'"$hereDir"'")) ; from1d2GLMcsv("'"$csvFileName"'","'"$outFileName1"'", "'"$outFileName2"'", "'"$outFileName4"'");exit;'
               
@@ -1328,31 +1328,31 @@ endif
    rm -f $outFileName1
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName1 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[6]"
 
    set outFileName2 = $ModelresultFolder/BOLD_full_mask_test_cond1.txt
    rm -f $outFileName2
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName2 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[10]"
 
    set outFileName4 = $ModelresultFolder/BOLD_full_mask_test_cond2.txt
    rm -f $outFileName4
    3dmaskdump  -mask $BOLDmask \
                -noijk -o $outFileName4 \
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
-               "/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"\
+               "XXX/quantitativ_fMRI/data/XXX/Analysis/CMRO2calc_classic/stats.MEC2.XXX_REML+tlrc.HEAD[14]"
 
    set hereDir = "$PWD"     
-   set Home = /home/mococo/Documents/Simon_Boylan2/hick_entropy_analysis/scripts
+   set Home = XXX/hick_entropy_analysis/scripts
    set csvFileName = "BOLD_full_mask_test.csv"
    matlab -nodisplay -nosplash -nodesktop -r 'addpath(char("'"$Home"'"));cd(char("'"$hereDir"'")) ; from1d2GLMcsv("'"$csvFileName"'","'"$outFileName1"'", "'"$outFileName2"'", "'"$outFileName4"'");exit;'
               
