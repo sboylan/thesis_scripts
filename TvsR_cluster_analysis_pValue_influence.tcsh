@@ -5,16 +5,16 @@
 
 set Home = $PWD
 set results_dir = '../results/task_versus_rest_clusterization_analysis_pValue_influence'
-set dataFolder  = '/home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data'
+set dataFolder  = 'XXX/quantitativ_fMRI/data'
 set input_directory = "Analysis/CMRO2calc_classic"
-set underlayMNI = "/home/mococo/abin/MNI152_2009_template_SSW.nii.gz"
+set underlayMNI = "XXX/abin/MNI152_2009_template_SSW.nii.gz"
 set ImageFolder = "images"
 set ModelresultFolder = "Model_results"
 # set suffix = "pValTest"
 set nameOfPvalnalaysis = "pvalue_influence_on_number_of_voxel_in_mask.1D"
 
 set atlas = "Schaefer_Yeo_17n_400 -atlas MNI_Glasser_HCP_v1.0 -atlas Brainnetome_1.0"
-setenv AFNI_SUPP_ATLAS "/home/mococo/abin/AFNI_atlas_spaces.niml"
+setenv AFNI_SUPP_ATLAS "XXX/abin/AFNI_atlas_spaces.niml"
 
 set pVals = (0.001 0.003 0.005 0.007 0.01 0.03 0.05 0.1)
 # set pVals = (0.01)
@@ -34,7 +34,7 @@ mkdir -p $ModelresultFolder/ClustSimdata
 echo "pVal minNclustThrshBOLD minNclustThrshPW NvoxBOLD NvoxPW NvoxInterMask t_value" > $nameOfPvalnalaysis
 
 
-# set subjects =  ('XXX' 'XXX' 'ArDC' 'BeMa' 'BrMa' 'CeHa' 'ClBo' 'CoVB' 'DoBi' 'ElAc' 'ElBe' 'ElCo' 'HiCh' 'JoDM' 'JoDP' 'LeGa' 'MaCh' 'MaKi' 'MaKM' 'MiAn' 'NaCa' 'NiDe' 'RaEM' 'RaZi' 'SaGa' 'SoSe')
+# set subjects =  ('test1')
 ## The mean of every dataset has to be 0 because ttest tests against 0.
 # because : * With 1 set ('-setA'), the mean across input datasets (usually subjects)
 #    is tested against 0.
