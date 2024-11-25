@@ -5,11 +5,11 @@ echo "(version 7.12, April 14, 2020)"
 echo "execution started: `date`"
 
 # to execute via tcsh: 
-#   tcsh -xef procHRF.Sujet1 |& tee output.proc.Sujet1
+#   tcsh -xef XXX.tcsh |& tee output.XXX
 # to execute via bash: 
-#   tcsh -xef common_Proc_first_session.Server.all 2>&1 | tee output.common_Proc__first_session_04_06.Server.all
+#   tcsh -xef XXX.tcsh 2>&1 | tee output.XXX
 
-set dataFolder =  /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data
+set dataFolder =  XXX/quantitativ_fMRI/data
 
 # assign output directory name
 set subjects =  ('Sujet2' 'Sujet3' 'Sujet4' 'Sujet5' 'Sujet6' 'Sujet7' 'Sujet8' 'Sujet9' 'Sujet10' 'Sujet11' 'Sujet13' )
@@ -31,7 +31,7 @@ endif
 
 cd $dataFolder
 set home = $PWD
-set template = /home/mococo/abin/MNI152_T1_2009c+tlrc
+set template = XXX/abin/MNI152_T1_2009c+tlrc
 # ============= SUBJECT loop =====================
 # the user may specify a single subject to run with
 foreach subj ( $subjects )
@@ -594,19 +594,19 @@ echo "execution finished: `date`"
 #     -regress_compute_tsnr yes -align_epi_strip_method 3dSkullStrip                                                                                         \
 #     -align_opts_aea -giant_move -cmass cmass+a -combine_method m_tedana_OC                                                                                 \
 #     -mask_segment_anat yes -mask_segment_erode yes -regress_stim_times                                                                                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-10TR.1D                    \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-11TR.1D                    \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-12TR.1D                    \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-2TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-3TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-4TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-5TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-6TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-7TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-8TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-9TR.1D                     \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/thirdScanHickregressor_cond1_ofst10_2runs_${subj}.1D   \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/thirdScanHickregressor_cond2_ofst10_2runs_${subj}.1D   \
-#     /home/mococo/Documents/Simon_Boylan2/quantitativ_fMRI/data/regressors/thirdScanHickregressor_cond4_ofst10_2runs_${subj}.1D   \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-10TR.1D                    \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-11TR.1D                    \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-12TR.1D                    \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-2TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-3TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-4TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-5TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-6TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-7TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-8TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/BH_regressor_2runs_${subj}_-9TR.1D                     \
+#     XXX/quantitativ_fMRI/data/regressors/thirdScanHickregressor_cond1_ofst10_2runs_${subj}.1D   \
+#     XXX/quantitativ_fMRI/data/regressors/thirdScanHickregressor_cond2_ofst10_2runs_${subj}.1D   \
+#     XXX/quantitativ_fMRI/data/regressors/thirdScanHickregressor_cond4_ofst10_2runs_${subj}.1D   \
 #     -regress_stim_labels 0TR m1TR m2TR 8TR 7TR 6TR 5TR 4TR 3TR 2TR 1TR                                                                                     \
 #     cond1 cond2 cond3 -mask_epi_anat yes
